@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/erkkipm/proto_sso;ssov1";
+
+message SaveUserRequest {
+  string name = 1;
+  string email = 2;
+}
+
+message SaveUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+service UserService {
+  rpc SaveUser(SaveUserRequest) returns (SaveUserResponse);
+}
